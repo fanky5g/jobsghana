@@ -1,0 +1,33 @@
+.privacy-policy {
+	font-family: $font-family--primary;
+	margin: 0 auto;
+	background: $white;
+	color: #212121;
+	min-height: 80vh;
+
+	.markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 0 45px;
+		ul, ol {
+			margin: 0;
+    		padding-left: 40px;
+		}
+		li {
+		    margin: 8px 0;
+    		padding: 0;
+		}
+	}
+
+	@include media('<768px') {
+		.markdown-body {
+			padding: 15px;
+		}
+	}
+}
+
+.terms-container {
+	background: $white;
+}

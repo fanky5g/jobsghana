@@ -1,0 +1,136 @@
+.Form {
+    position: relative;
+    margin: 40px auto;
+    font-family: $font-family--primary;
+
+    .ReactModalPortal & {
+        margin: 0;
+   }
+    .Form__container--header {
+        text-align: left;
+        padding: 2px 0;
+
+        @include media('<=764px') {
+            padding: 0 20px;
+        }
+        
+        label {
+            font-size: 24px;
+            color: #333;
+            font-weight: $font-weight--normal;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: $font-weight--semi-bold;
+            @include media('<=764px') {
+                font-size: 18px;
+            }
+        }
+   }
+
+    .Form__container--step {
+        background: $white;
+        max-width: 564px;
+        margin: 0 auto;
+        padding: 0 20px 20px;
+        
+        .Form__container--fieldrow {
+            label {
+                float: left;
+                margin: 0 0 5px 0;
+                font-size: 16px;
+                @include media('<=764px') {
+                    float: left;
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: $font-weight--normal;
+                }
+            }
+            .ant-select {
+                width: 100%;
+                &.modal-select {
+                    background: $white;
+                    height: 40px;
+                    font-family: $font-family--primary;
+                    outline: none;
+                    padding: 0 8px;
+                    font-size: 16px;
+                    &:hover, &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 0 10px;
+            margin-bottom: 6px;
+
+            &.doubly {
+                &:nth-child(1) {
+                    flex: 1;
+               }
+                &:nth-child(2) {
+                    flex: 3;
+               }
+           }
+            &.roles {
+                padding: 20px;
+           }
+            .mdl-textfield {
+                width: 100%;
+           }
+            .mdl-checkbox {
+                width: 50%;
+                padding-bottom: 10px;
+           }
+
+            &.actions {
+                margin-top: 40px;
+                &.single .mdl-button {
+                    margin: 0 auto;
+                }
+                .mdl-button {
+                    flex: 1;
+                    max-width: 50%;
+                    &.success {
+                        background: green;
+                        position: relative;
+                        transition: background .2s ease-in;
+                        &:before {
+                            content: "\2713";
+                            color: green;
+                            background-color: $white;
+                            width: 1.2em;
+                            line-height: 1.2em;
+                            border-radius: 1.2em;
+                            position: absolute;
+                            right: 20px;
+                            top: 10px;
+                       }
+                   }
+               }
+           }
+       }
+   }
+
+   &.modalForm {
+        margin-top: 8px;
+        .Form__container--step {
+            padding: 0;
+        }
+    }
+}
+
+
+
+.mdl-textfield.is-invalid .mdl-textfield__input {
+    border-color: rgba(0,0,0, 0.12);
+}
+
+.mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+    color: rgba(0,0,0, 0.12);
+}

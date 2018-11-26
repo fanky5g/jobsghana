@@ -1,0 +1,16 @@
+.about {
+	margin-bottom: 80px;
+	font-family: $font-family--primary;
+	.ant-tabs-nav .ant-tabs-tab-active {
+		color: #323232;
+		font-weight: $font-weight--semi-bold;
+	}
+
+	.ant-tabs-nav .ant-tabs-tab:hover {
+		color: #323232;
+	}
+
+	.ant-tabs-ink-bar {
+		background-color: #323232;
+	}
+}

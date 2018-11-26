@@ -1,0 +1,61 @@
+.accounts, .subscribers {
+  max-width: 80%;
+  margin: 40px auto;
+  animation: all .5s ease-in;
+
+  &>* {
+    font-size: 14px;
+  }
+
+  &:not(.loading) {
+    background: $white;
+  }
+
+  .account-list {
+    padding: 30px 20px 10px;
+    .account {
+      cursor: pointer;
+
+      &.List__Item {
+        &.expanded :hover {
+          background: $white;
+        }
+        padding: 0;
+        .mdl-spinner {
+          width: 16px;
+          height: 16px;
+          margin-top: 16px;
+          margin-left: 50%;
+        }
+      }
+
+      .actions {
+        padding: 0 8px;
+        &>* {
+          margin-right: 8px;
+        }
+        button:('last-of-type') {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .loadmore {
+    padding: 20px 0;
+    .mdl-button,
+    .mdl-spinner {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+span.List__Item_name {
+  max-width: 98%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  padding-left: 0;
+  line-height: 1.4!important;
+}

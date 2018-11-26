@@ -1,0 +1,78 @@
+.DashBar {
+	position: fixed;
+	-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+    background: $white;
+    padding: 16px 0;
+    color: $text-color--primary;
+
+    li a {
+    	color: rgba(0, 0, 0, 0.87) !important;
+    }
+
+    .tabsActive & {
+    	padding: 16px 0 0;
+    }
+
+	.mdl-layout__drawer-button {
+		@include media('>1024px') {
+			display: none;
+		}
+	}
+
+	.mdl-layout-title {
+		span {
+			font-size: 24px;
+			text-transform: capitalize;
+			transition: all .5s ease;
+			font-weight: $font-weight--light;
+			@include media('<840px') {
+				font-size: 18px;
+			}
+		}
+		strong {
+			color: $text-color--secondary;
+			padding-right: 5px;
+			font-weight: $font-weight--thin;
+			letter-spacing: 1px;
+		}
+	}
+	
+	.DashBar__right {
+		padding-top: 10px;
+		.material-icons {
+			&.mdl-badge{
+				&:after {
+					//background: $amethyst;
+				}
+			}
+		}
+		vertical-align: middle;
+		> * {
+			margin-left: 10px;
+		}
+	}
+
+	.tab_container {
+		display: none;
+		font-family: "Lato";
+		height: 48px;
+		.tabsActive & {
+			display: block;
+		}
+		.mdl-tabs__tab-bar {
+			//justify-content: flex-start;
+		}
+
+		.mdl-tabs__tab {
+			text-transform: none;
+		}
+
+		.mdl-tabs__tab-bar {
+			border-bottom: none;
+		}
+		.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+			height: 3px;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html data-uuid="{{ .UUID }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#303030" />
+    <link rel="manifest" href="/static/manifest.json">
+    {{ .HTMLTitle }} {{ .HTMLMeta }}
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6c68f2b2-9f42-405b-8876-80d615022458";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <style type="text/css">
+      .is-noJs .showOnlyJS {
+          display: none!important;
+        }
+
+        .is-noJs .noscript {
+            display: block!important;
+        }
+    
+        .noscript {
+            display: none!important;
+        }
+    </style>
+<link href="/static/build/client.css" rel="stylesheet"></head>
+<body class="is-noJs web">
+    {{if .Error}}
+    <div class="error" style="
+          width: 50%;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          opacity: .5;
+          color: #666;
+          border: 2px solid #fb2c10;
+          background: rgba(0,0,0,.1);
+          font-family:monaco, Consolas, Lucida Console, monospace;
+          pointer-events: none;">
+        <button style="padding: 10px 10px 0 10px;pointer-events: auto; font-size: 16px" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">
+            Server Error: {{ .UUID }}
+        </button>
+        <hr style="
+          height: 0px;
+          border: none;
+          border-bottom: 2px solid #fb2c10;
+        " />
+        <pre style="font-family:monaco, Consolas, Lucida Console, monospace;
+          font-size: 14px; padding: 0 10px 10px; margin: 0">{{ .Error }}</pre>
+    </div>
+    {{end}}
+    <div id="App">{{ .HTMLApp }}</div>
+    <div id="preview-pane" style="display: none;"></div>
+    <img src="/static/images/preview_pointer.png" id="preview_pointer" alt="pointer" style="display: none;" />
+    <script onload="this.parentElement.removeChild(this)">
+    window['--app-initial'] = JSON.parse("{{if .Initial}}{{ .Initial }}{{else}}{}{{end}}");
+    </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://cdn.ravenjs.com/3.19.1/raven.min.js"></script>
+    <script type="text/javascript" src="/static/build/vendor.bundle.js"></script>
+    <script type="text/javascript" src="/static/build/client.js"></script>
+  </body>
+</html>

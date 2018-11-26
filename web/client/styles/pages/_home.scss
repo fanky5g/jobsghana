@@ -1,0 +1,45 @@
+.home {
+    padding-bottom: 80px;
+    .ant-tabs-nav .ant-tabs-tab-active {
+        color: #323232;
+        font-weight: $font-weight--semi-bold;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab:hover {
+        color: #323232;
+    }
+
+    .ant-tabs-ink-bar {
+        background-color: #323232;
+    }
+
+    .pad {
+        padding: 20px;
+    }
+
+    #footer a.link-underlined {
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #footer {
+        position: relative;
+    }
+}
+
+.homepage {
+    .mdl-layout__inner-container {
+        height: auto!important;
+    }
+}
+
+.mobile {
+    .homepage {
+        .mdl-layout__inner-container {
+            height: 100%!important;
+        }
+    }
+}

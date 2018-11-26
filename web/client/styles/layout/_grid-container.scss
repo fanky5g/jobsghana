@@ -1,0 +1,271 @@
+// ===========================================================
+// Grid Container
+// ===========================================================
+#App,
+#app-view {
+    height: 100%;
+}
+
+.grid {
+    @extend %clearfix;
+    @extend .centered;
+    width: 90%; // Make nested grid container 100%
+    [class*="grid__col--"]>& {
+        width: 100%;
+    } // Set a max-width for grid container
+    @media(min-width: 1100px) {
+        max-width: $g-cont-max-w;
+    }
+    @include media('<768px') {
+        width: inherit;
+    }
+}
+
+.container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    @include media('>1200px') {
+        max-width: 1164px;
+    }
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    @include media('>992px') {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    @include media('<60rem') {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+.row {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.secondary-info {
+    text-align: center;
+    h6 {
+        @include text(14px);
+        margin-bottom: 0
+    }
+    p {
+        @include text(13px);
+        padding-bottom: 12px;
+    }
+    svg {
+        width: 50%;
+    }
+    .bordered {
+        border: 1px solid rgb(233, 240, 243);
+        padding: 20px 0;
+    }
+}
+
+.section {
+    @extend %centered;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+    display: block;
+    overflow: visible;
+    padding: 1.25rem;
+    @include media('>60rem') {
+        padding: 4.375rem 1.25rem;
+    }
+    &.section-footer {
+        padding: 1.25rem!important;
+    }
+    @include media('<=400px') {
+        padding: 0;
+    }
+    .section-content {
+        @extend %text-centered;
+        overflow: visible;
+        display: block;
+        -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        -moz-transition: all 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        transition: all 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        &:last-child {
+            margin-right: 0;
+        }
+        @include media('>80rem') {
+            float: left;
+            display: block;
+            margin-right: 2.35765%;
+            width: 82.94039%;
+            margin-left: 8.5298%;
+        }
+    }
+    &.section-lg {
+        @include media('>60rem') {
+            padding: 12.5rem;
+        }
+    }
+}
+
+.image-grid {
+    background: #26A69A;
+    border-bottom: 0.0625rem solid #26A69A;
+    color: white;
+    width: 100%;
+    display: block;
+    .row-1,
+    .row-2 {
+        @include media('>60rem') {
+            width: 100%;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+    }
+}
+
+.gallery {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: 1.25rem 0;
+    padding: 0;
+    list-style: none;
+    overflow: visible;
+    &>.item {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        figcaption {
+            min-height: 5rem;
+        }
+    }
+    &>.item {
+        figcaption {
+            padding: 2.35765%;
+            text-align: center;
+            min-height: 6.875rem;
+            .title {
+                @extend %resetHeaders;
+                padding-bottom: 0;
+                font-size: 0.875rem;
+                font-family: "Lato", sans-serif;
+                color: #373737;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                box-orient: vertical;
+                overflow: hidden;
+                font-weight: 800;
+            }
+            .sub-title {
+                display: block;
+                font-size: 0.75rem;
+                font-family: "Lato", sans-serif;
+                color: #5d5d5d;
+                line-height: 1.4;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .item {
+        box-shadow: 0 0 0 0.3125rem white;
+        figure {
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            a {
+                cursor: pointer;
+            }
+            img {
+                @include media('<60rem') {
+                    //width: 220px;
+                    height: auto;
+                    margin: 0 auto;
+                }
+                @include media('<=400px') {
+                    //width: 100px;
+                }
+            }
+        }
+    }
+    &.invert {
+        margin-bottom: 0;
+        li.item {
+            box-shadow: none;
+        }
+    }
+}
+
+.gallery-3 {
+    .item {
+        webkit-flex-basis: 100%;
+        -moz-flex-basis: 100%;
+        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+        margin: 0 auto;
+        @include media('>43.75rem') {
+            -webkit-flex-basis: 33.33333%;
+            -moz-flex-basis: 33.33333%;
+            flex-basis: 33.33333%;
+            -ms-flex-preferred-size: 33.33333%;
+        }
+    }
+}
+
+.gallery-5 {
+    .item {
+        webkit-flex-basis: 50%;
+        -moz-flex-basis: 50%;
+        flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        @include media('>43.75rem') {
+            -webkit-flex-basis: 33.33333%;
+            -moz-flex-basis: 33.33333%;
+            flex-basis: 33.33333%;
+            -ms-flex-preferred-size: 33.33333%;
+        }
+        @include media('>60rem') {
+            -webkit-flex-basis: 20%;
+            -moz-flex-basis: 20%;
+            flex-basis: 20%;
+            -ms-flex-preferred-size: 20%;
+        }
+        @include media('>80rem') {
+            -webkit-flex-basis: 20%;
+            -moz-flex-basis: 20%;
+            flex-basis: 20%;
+            -ms-flex-preferred-size: 20%;
+        }
+    }
+}

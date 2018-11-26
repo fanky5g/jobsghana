@@ -1,0 +1,271 @@
+.cv {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    background: $aliceblue;
+
+    @include media('<=850px') {
+        top: 56px;
+    }
+
+    .actions {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        list-style-type: none;
+        .save-resume, .save-changes {
+            padding:  8px 0;
+            margin: 0 auto;
+        }
+    }
+
+    .opt {
+        position: relative;
+        @extend %clearfix;
+        margin-bottom: 12px;
+        .ant-upload {
+            float: right;
+        }
+    }
+
+    form {
+        border: 1px solid #d9d9d9;
+        margin-top: 16px;
+        background: $white;
+        @include media('<=1248px') {
+            padding-bottom: 64px;
+        }
+    }
+
+    .ant-col-18 {
+        width: 75%;
+    }
+
+    .bq {
+        @extend %clearfix;
+        position: relative;
+        padding: 16px 8px;
+        transition: all ease-in 0.15s;
+        webkit-transition: all ease-in 0.15s;
+        .ai_q {
+            float: right;
+            margin-right: 20px;
+            display: block;
+        }
+    }
+
+    .rfi {
+        padding: 0 0 16px;
+    }
+
+    .right_pane {
+        background: $white;
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        right: 0;
+        border-left: 1px solid #e0e0e0;
+    }
+
+    .cd_data {
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    .meta {
+        font-family: $font-family--primary;
+        font-size: 14px;
+        color: #323232;
+        span {
+            margin-right: 20px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .pane_header {
+        border-bottom: 1px solid #e0e0e0;
+        line-height: 60px;
+    }
+
+    .br {
+        padding: 20px;
+    }
+}
+
+.SectionContent {
+    font-family: $font-family--primary;
+    transition: all .2s ease-in;
+    margin-bottom: 20px;
+    @extend %clearfix;
+
+    .add_field {
+        float: right;
+        margin: 6px 0 0;
+        font-weight: $font-weight--semi-bold;
+    }
+
+    .SectionContent__main {
+        .SectionContent__main--big {
+            position: relative;
+            background: $white;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+            span {
+                border-bottom: none;
+            }
+
+            &>* {
+                display: flex;
+                width: 100%;
+                border-bottom: 1px solid #e0e0e0;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+
+                .inner-div {
+                    flex-direction: row;
+                    flex: 1 50%;
+                    min-height: 32px;
+                    padding: 8px;
+                    overflow: hidden;
+                    width: 50%;
+                    border-right: 1px solid #e0e0e0;
+                    &:last-child {
+                        border-right: none;
+                    }
+                    @include media('<=764px') {
+                        flex-wrap: wrap;
+                    }
+                    h2.dash_title {
+                        font-size: 11px;
+                        margin-top: 0;
+                        padding-bottom: 0;
+                        color: #e0e0e0;
+                    }
+                    p {
+                        margin-top: 5px;
+                        font-weight: 600;
+                        color: #484848;
+                        font-size: 12px;
+                        &.small-text {
+                            font-size: 10px;
+                            width: 70%;
+                        }
+                    }
+                    input,
+                    textarea {
+                        margin-top: 5px;
+                        font-weight: 600;
+                        color: #484848;
+                        font-size: 12px;
+                        border: none;
+                        cursor: pointer;
+                        min-width: 50px;
+                        margin-left: 5px;
+                        text-overflow: ellipsis;
+                        &.small-text {
+                            font-size: 10px;
+                            width: 70%;
+                        }
+                        @include media('<=800px') {
+                            font-size: 14px;
+                        }
+                    }
+                    textarea {
+                        resize: none;
+                        font-family: $font-family--pprimary;
+                        line-height: 20px;
+                    }
+
+                    .ant-select {
+                        margin-top: 4px;
+                        min-width: 156px;
+                        max-width: 50%;
+                        font-size: 12px;
+                        border: 0;
+                        background-color: #fff;
+                        -webkit-border-radius: 0;
+                        border-radius: 0;
+                        ul {
+                            list-style-type: none;
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+            .remove_field {
+                position: absolute;
+                bottom: 4px;
+                right: 4px;
+                display: block;
+                width: inherit;
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
+    }
+}
+
+h2.dash_title {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: #484848;
+    padding-bottom: 8px;
+    &.variant {
+        text-transform: capitalize;
+    }
+}
+
+.col_head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 60px;
+    width: 100%;
+}
+
+.col_body {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 364px;
+}
+
+.pane {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.section_pane {
+    display: block;
+    overflow: auto;
+    li {
+        display: block;
+        position: relative;
+        padding: 12px 30px 12px 18px;
+        color: #484848;
+        border-bottom: 1px solid #e0e0e0;
+        z-index: 1;
+        cursor: pointer;
+        -ms-transition: background-color 0.333s ease-in-out 0s;
+        transition: background-color 0.333s ease-in-out 0s;
+        &:hover {
+            background-color: #f2f2f2;
+        }
+        .check {
+            position: absolute;
+            right: 24px;
+            z-index: 5;
+        }
+    }
+}

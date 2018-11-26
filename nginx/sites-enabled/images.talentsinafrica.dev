@@ -1,0 +1,25 @@
+server {
+
+  listen 80;
+  server_name images.talentsinafrica.dev;
+  access_log /var/log/nginx/images.talentsinafrica.log;
+  charset utf-8;
+
+  return 302 https://$server_name$request_uri;
+}
+
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+  server_name images.talentsinafrica.dev;
+
+  include snippets/self-signed.conf;
+  include snippets/ssl-params.conf;
+
+  location / {
+    proxy_pass http://imageserver:3001;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+}

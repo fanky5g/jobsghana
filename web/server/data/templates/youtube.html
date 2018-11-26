@@ -1,0 +1,39 @@
+{{define "youtube"}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube Account Authentication</title>
+</head>
+<body>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+    <tr>
+        <td bgcolor="#ffffff" width="100%">
+            <table class="main-wrapper" width="600" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#ffffff">
+                <tr>
+                    <td class="cell" width="100%">
+                        <div class="wrapper" style="-moz-border-radius: 3px; -webkit-border-radius: 3px; border: #e5e3d8 1px solid; border-radius: 3px; margin: 2%; padding: 5% 8%;">
+                            <table class="content" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td class="content-cell" width="100%">
+                                    	<p style="font-family: sans-serif; line-height: 1.5em; color: red; text-align: center;">NB: Admin only page. Make sure to authenticate only with application youtube account - {{.}}.</p>
+										<p style="color: #808284; font-family: sans-serif; font-size: 15px; font-weight: normal; line-height: 1.5em; margin: 0; padding: 0 0 1.5em 0;">
+											Application not logged into google account-{{.}}
+										</p>
+										<p style="text-align: center; font-family: sans-serif; font-size: 15px; font-weight: normal; line-height: 1.5em; margin: 0; padding: 0 0 1.5em 0;">
+											<a href="/api/youtube" style="color: #808284;">
+											<strong>Proceed to youtube oauth</strong>
+										</a>
+										</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+{{end}}

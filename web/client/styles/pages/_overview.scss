@@ -1,0 +1,40 @@
+.Overview {
+	padding: 20px 0;
+	max-width: 800px;
+	margin: 40px auto;
+	background: $white;
+	.Overview__inner {
+		display: block;
+		margin: 20px auto;
+		max-width: 50%;
+
+		vertical-align: middle;
+
+		.Overview__inner--row {
+			padding: 10px 5px;
+			@extend %clearfix;
+			& > * {
+				float: left;
+				display: inline-block;
+				width: 50%;
+			}
+			.Overview__inner--row-main_header {
+				@extend %resetHeaders;
+				font-size: 16px;
+				font-weight: $font-weight--semi-bold;
+				line-height: 16px;
+				clear: both;
+				text-transform: uppercase;
+				width: 100%;
+			}
+			.Overview__inner--row-header {
+				@extend %resetHeaders;
+				font-size: 16px;
+				font-weight: $font-weight--normal;
+			}
+			.span{
+				font-weight: $font-weight--normal;
+			}
+		}
+	}
+}

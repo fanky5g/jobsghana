@@ -1,0 +1,77 @@
+package: github.com/fanky5g/xxxinafrica/web
+import:
+- package: github.com/codegangsta/cli
+- package: github.com/dop251/goja
+- package: github.com/dop251/goja_nodejs
+  subpackages:
+  - eventloop
+- package: github.com/elazarl/go-bindata-assetfs
+- package: github.com/fatih/structs
+- package: github.com/itsjamie/go-bindata-templates
+- package: github.com/labstack/echo
+  subpackages:
+  - middleware
+- package: github.com/nu7hatch/gouuid
+- package: github.com/olebedev/config
+- package: github.com/olebedev/gojax
+  subpackages:
+  - fetch
+- package: github.com/olebedev/on
+- package: github.com/jteeuwen/go-bindata
+- package: github.com/aws/aws-sdk-go
+  version: ^1.7.9
+- package: github.com/stretchr/testify
+  version: ^1.1.4
+  subpackages:
+  - assert
+- package: github.com/rubenfonseca/fastimage
+- package: github.com/twinj/uuid
+  version: ^0.10.0
+- package: github.com/google/google-api-go-client
+- package: github.com/dgrijalva/jwt-go
+  version: ^3.0.0
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
+- package: gopkg.in/gomail.v2
+  version: ^2.0.0
+- package: golang.org/x/oauth2
+  subpackages:
+  - redis
+- package: google.golang.org/api
+  subpackages:
+  - youtube/v3
+- package: github.com/NYTimes/gziphandler
+- package: github.com/gorilla/securecookie
+  version: ^1.1.0
+- package: github.com/gorilla/websocket
+  version: ^1.2.0
+- package: github.com/jinzhu/gorm
+  version: ^1.0.0
+- package: github.com/jinzhu/inflection
+- package: github.com/lib/pq
+- package: github.com/pkg/profile
+  version: ^1.2.1
+- package: github.com/otiai10/gosseract
+- package: github.com/otiai10/mint
+  version: ^1.1.0
+- package: github.com/PuerkitoBio/gocrawl
+  version: ^1.0.0
+- package: github.com/araddon/dateparse
+- package: github.com/jung-kurt/gofpdf
+  version: ^1.0.0
+- package: github.com/jaytaylor/html2text
+- package: github.com/aymerick/raymond
+  version: ^2.0.1
+- package: github.com/olekukonko/tablewriter
+- package: github.com/eawsy/aws-lambda-go-core
+  subpackages:
+  - '...'
+- package: github.com/russross/blackfriday
+  version: ^2.0.0
+- package: github.com/microcosm-cc/bluemonday
+- package: github.com/shurcooL/sanitized_anchor_name
+- package: github.com/lunny/html2md
+- package: github.com/ahmetb/go-linq
+  version: ^3.0.0
+- package: github.com/dgryski/go-wurfl

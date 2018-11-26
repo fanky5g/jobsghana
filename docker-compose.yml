@@ -1,0 +1,68 @@
+version: "2"
+
+services:
+  web:
+    build: ./web
+    expose:
+      - "5000"
+      - "5001"
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    volumes:
+      - ./web:/go/src/bitbucket.org/fanky5g/xxxinafrica/web
+      - /home/bleve:/home/bleve
+    links:
+      - dynamodb
+      - postgresql
+    environment:
+      XXXINAFRICA_LOCAL_DEV: "true"
+      NODE_ENV: "development"
+    command: bash -c "echo '127.0.0.1       admin.localhost' >> /etc/hosts && make serve"
+
+  crawler:
+    build: ./crawler
+    command: bash -c "cron && tail -f /var/log/cron.log"
+
+  imageserver:
+    build: ./imageserver
+    environment:
+      NODE_ENV: development
+      AWS_ACCESS_KEY_ID: AKIAJOM6I4IC7CYP7UFQ
+      AWS_SECRET_ACCESS_KEY: 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
+      AWS_REGION: us-east-1
+      S3_BUCKET: xxxinafrica_store
+    expose:
+      - "3001"
+    command: npm start
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - web
+      - imageserver
+
+  redis:
+    image: redis:3.0.7-alpine
+    expose:
+      - "6379"
+    volumes:
+      - /home/redis:/data
+
+  postgresql:
+    build: ./postgresql/
+    # volumes:
+    #   - /var/lib/postgresql:/var/lib/postgresql/
+    expose:
+      - "5432"
+
+  dynamodb:
+    image: cnadiminti/dynamodb-local:latest
+    volumes:
+      - /home/dynamodb:/dynamodb_local_db
+    expose:
+      - "8000"

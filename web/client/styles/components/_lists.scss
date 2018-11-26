@@ -1,0 +1,114 @@
+.List {
+    .mdl-cell--6-col,
+    .mdl-cell--6-col-tablet.mdl-cell--6-col-tablet {
+        @include media('<840px', '>480px') {
+            width: calc(50% - 16px);
+        }
+    }
+    .mdl-cell {
+        margin: 0;
+    }
+    .List__Header {
+        span {
+            //color: $color-primary--dark;
+        }
+    }
+    .List__container {
+        .List__actions {
+            .filter {
+                display: inline-block;
+                float: right;
+                position: relative;
+                margin-top: 20px;
+                //color: $text-color--secondary;
+            }
+        }
+        .List__Item {
+            position: relative;
+            padding: 5px;
+            transition: all .1s ease-in;
+            border-top: 1px solid $lavender;
+            cursor: pointer;
+            &:hover {
+                background: $aliceblue;
+            }
+            &:last-child {
+                border-bottom: 1px solid $lavender;
+            }
+            .List__Item_subcontainer {
+                display: inline-block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                &:last-child {
+                    margin-right: 0;
+                }
+                input {
+                    margin-top: 5px;
+                    font-weight: font-weight--normal;
+                    color: $color-primary--dark;
+                    border: none;
+                    cursor: pointer;
+                    margin-left: 5px;
+                    background: transparent;
+                    &:focus {
+                        background: $white;
+                    }
+                    @include media('<=800px') {
+                        font-size: 14px;
+                    }
+                }
+                .List__Item_name,
+                .List__Item_email {
+                    font-weight: $font-weight--normal;
+                    text-rendering: optimizeLegibility;
+                    line-height: 48px;
+                    &.readOnly {
+                        input {
+                            font-weight: $font-weight--normal;
+                            border: none;
+                            text-rendering: optimizeLegibility;
+                        }
+                    }
+                }
+                .List__Item_active {
+                    padding-top: 10px;
+                    display: inline-block;
+                    .circle {
+                        width: 10px;
+                        height: 10px;
+                        display: inline-block;
+                        border-radius: 5px;
+                        &.active {
+                            background: lighten(green, 10%);
+                        }
+                        &.inactive {
+                            background: lighten(yellow, 10%);
+                        }
+                    }
+                }
+                & > * {
+                    padding-left: 10px;
+                    float: left;
+                    &:last-child {
+                        float: none;
+                    }
+                }
+                &.List__Item_actions {
+                    display: inline-block;
+                    .inner {
+                        float: right;
+                        & > * {
+                            margin-right: 10px;
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        .mdl-button {
+                            color: $text-color--secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

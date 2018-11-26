@@ -1,0 +1,100 @@
+.Messages {
+    padding: 40px 0;
+    .Message {
+        .mdl-cell {
+            margin: 0;
+        }
+        &:hover {
+            background: #dcdcdc;
+            cursor: pointer;
+            transition: background .5s ease;
+        }
+        .author {
+            display: block;
+            img {
+                margin: 0 auto;
+                border-radius: 50%;
+            }
+        }
+        .body {
+            border-bottom: 1px solid $divider-color;
+            padding: 5px 0;
+            .head {
+                @extend %clearfix;
+                .name,
+                .date {
+                    font-size: 13px;
+                    font-weight: $font-weight--semi-bold;
+                }
+                .name {
+                    float: left;
+                    color: #000;
+                }
+                .date {
+                    float: right;
+                    color: $text-color--secondary;
+                }
+            }
+            .subject {
+                a {
+                    color: $text-color--primary;
+                }
+            }
+            .text {
+                line-height: 1.5em;
+                padding-top: 5px;
+                max-width: 80%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+        }
+        &.unread {
+            .body {
+                .subject {
+                    a {
+                        font-weight: $font-weight--ultra-bold;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single__message {
+    .body {
+        padding: 10px 20px;
+        background: $alabaster;
+        .head {
+            @extend %clearfix;
+            .name,
+            .date {
+                font-weight: $font-weight--semi-bold;
+                color: $text-color--secondary;
+            }
+            .name {
+                float: left;
+            }
+            .date {
+            	font-size: 13px;
+                float: right;
+            }
+        }
+        .subject {
+        	display: block;
+        	text-align: left;
+        	padding-top: 10px;
+        	font-size: 18px;
+        }
+        .text {
+        	padding: 20px;
+        	background: #fcfcfc;
+        	border: 1px solid $divider-color;
+        	border-radius: 5px;
+        	margin-top: 5px;
+        	text-align: justify;
+        }
+    }
+}

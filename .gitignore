@@ -1,0 +1,9 @@
+**/node_modules/**
+**/todo.md
+
+web/server/bindata.go
+web/server/data/static/build
+web/.pid
+web/debug.log
+web/**/debug.log
+web/webpack.production.js

@@ -1,0 +1,25 @@
+//Web Fonts
+@mixin font-face ($family, $file) {
+    @font-face {
+        font-family: $family;
+        src: url('#{$path-fonts}/#{$file}.ttf');
+   }
+}
+
+//Text
+@mixin text($size,
+$lheight: null,
+$weight: null,
+$color: null) {
+    font-size: $size;
+    line-height: $lheight;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin doubly($margin: 1em) {
+    & + & {
+        margin-left: $margin;
+        @content;
+   }
+}

@@ -1,0 +1,45 @@
+.menu-button {
+	background: $aliceblue;
+	border-color: $aliceblue;
+	&.active, &:hover{
+		background: $aliceblue;
+		border-color: $aliceblue;
+	}
+	padding: 6px 8px;
+	height: 32px;
+	box-sizing: content-box;
+	margin-top: 8px;
+	position: relative;
+	&>* {
+		padding-left: 8px;
+		line-height: 24px;
+	}
+	.anticon{
+		line-height: 24px;
+		font-weight: $font-weight--semi-bold;
+		font-size: 9px;
+	}
+	img {
+		padding-left: 0;
+		display: inline;
+	}
+	span{
+		font-weight: $font-weight--semi-bold;
+		font-size: 12px;
+	}
+	&.active {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.menu-collapse {
+	background: #F1F3F4;
+	position: absolute;
+	top: 54px;
+	left: 0;
+	flex: 0 0 100%;
+	width: 100%;
+	&>*{
+		padding: 6px 8px;
+	}
+}

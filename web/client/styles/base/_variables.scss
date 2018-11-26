@@ -1,0 +1,83 @@
+//Color Variables
+$white            : #FFFFFF;
+$black            : #000000;
+$aliceblue        : #F9FAFC;
+$amethyst         : #AA66E3;
+$lavender         : #E4DFF2;
+$quartz           : #DCDBEA;
+$razzmatazz       : #F20664;
+
+// Functional color variables
+$color-primary         :   #303030;
+$color-primary--dark   :   #2F3E9E;
+$color-dark--contrast  :   #FEFEFE;
+$color-dark--contrast__active: #FEFEFE;
+$color-primary--contrast:  #C4C9E8;
+$color-primary--contrast__active: #C3C3C3;
+$color-accent--contrast:   #4D4D4D;
+$color-accent          :   $razzmatazz;
+$color-accent-complement:  #26A69A;
+$color-shadow          :   rgba($black, .2);
+$text-color--primary   :   #212121;
+$text-color--secondary :   #757575;
+$text-color--icons     :   #FEFEFE;
+$disabled-hint--text   :   #9B9B9B;
+$link-color--default   :   $color-accent-complement;
+$link-color--visited   :  desaturate($color-accent, 30);
+$divider-color         :   #BDBDBD;
+
+// Other color variables
+$alabaster             :   #fafafa;
+
+// Sizes
+$base__font-size   : 16px;
+$base__line        : 24px;
+$base__padding     : 5px;
+
+// Grid
+$g-col-width       : 65px;
+$g-gutter-width    : 20px;
+$g-col-count       : 12;
+$g-cont-max-w      : 68em;
+
+// Font Weights
+$font-weight--thin           : 100;
+$font-weight--light          : 300;
+$font-weight--normal         : 400;
+$font-weight--medium         : 500;
+$font-weight--semi-bold      : 600;
+$font-weight--bold           : 700;
+$font-weight--ultra-bold     : 900;
+
+// Type specific variables
+$standard-spacing: 30px;
+
+// Transitioins
+$trns-duration     :  .3s;
+
+// Shades and Tints
+$shd-light: 10%;
+$shd-dark: 20%;
+$tnt-dark: 10%;
+$tnt-light: 20%;
+
+
+%top-margin{
+	margin-top: 64px;
+}
+
+//Font stacks
+$font-url--google : 'https://fonts.googleapis.com/css?family=Roboto|Material+Icons|Alegreya:400,100,100italic,300,400italic,500,600,700,800';
+$stack-sans-serif: sans-serif;
+$font-family--pprimary: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans", $stack-sans-serif;
+$font-family--primary: Roboto, $font-family--pprimary;
+$font-family--secondary: "Helvetica Neue", $stack-sans-serif;
+
+//Border Radius
+$br--default: .4em;
+$br--round: 50%;
+
+//Asset Paths
+$path-img     : '/images';
+$path-svg     : '/svg';
+$path-fonts   : '/fonts';

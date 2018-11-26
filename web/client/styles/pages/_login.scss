@@ -1,0 +1,54 @@
+#homeicon {
+    background: url(/static/images/logo-web.png) no-repeat;
+}
+
+@include media('<=850px') {
+    #homeicon {
+        display: none;
+    }
+}
+
+.Login {
+	background: $aliceblue;
+
+	@include media('<=860px') {
+		height: calc(100vh - 57px);
+	}
+
+	@include media('>860px') {
+		height: calc(100vh - 65px);
+	}
+
+	&.Form {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+
+	.Form__container--fieldrow {
+		.mdl-checkbox {
+            width: auto!important;
+        }
+
+        a {
+        	color: #09c;
+        }
+	}
+
+	.loginForm {
+		background: $white;
+        border-top: none;
+        @include media('>=1024px') {
+			padding: 40px;
+		}
+
+		@include media('<1024px') {
+			padding-top: 20px;
+		}
+        position: relative;
+
+        .mdl-textfield__label:after {
+        	bottom: 14px;
+        }
+	}
+}

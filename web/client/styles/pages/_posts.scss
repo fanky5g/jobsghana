@@ -1,0 +1,289 @@
+.Posts {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px 0;
+    animation: all .5s ease-in;
+    &:not(.loading) {
+        background: $white;
+    }
+    
+    .Posts__add {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+%textarea {
+    font-size: 16px;
+    font-family: $font-family--primary;
+    font-weight: $font-weight--medium;
+    line-height: 1.5em;
+    border-bottom-color: #333333;
+    resize: none;
+    color: #dcdccc;
+}
+
+.emojiSelectPopoverToneSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.EditorContainer {
+    ::selection {
+        background-color: #dcdccc;
+        color: #193549;
+    }
+
+    //background: #193549;
+    min-height: 100%;
+    @include media('<=1024px') {
+        min-height: calc(100vh - 56px);
+    }
+    .Editor__Main {
+        padding: 10px 20px 20px;
+        width: 80%;
+        margin: 0 auto;
+
+        .Preview {
+            background: #fefefe;
+            min-height: 128px;
+            margin-top: 20px;
+        }
+    }
+
+    .Editor {
+        .public-DraftEditor-content {
+            line-height: 1.6em;
+            overflow: auto;
+            font-size: 16px;
+            font-family: $font-family--primary;
+
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            cursor: text;
+            padding: 16px;
+            border-radius: 2px;
+            box-shadow: inset 0px 1px 8px -3px #ABABAB;
+            background: #fefefe;
+            margin: 0 auto;
+            margin-bottom: 2em;
+
+            min-height: calc(60vh);
+        }
+
+        .public-DraftEditorPlaceholder-root {
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .Editor__TextField .image-attachment {
+            font-family: cursive;
+            display: block;
+            border-radius: 5px;
+            font-size: 14px;
+            background: #dcdcdc;
+        }
+    }
+    .notification-bar {
+        z-index: 100000 !important;
+        text-align: center;
+    }
+    .EditorContainer__Header {
+        width: 100%;
+        position: relative;
+        background: $alabaster;
+        .material-icons {
+            color: #233645;
+        }
+
+        .mdl-layout-title {
+            .mdl-button {
+                margin-right: 12px;
+            }
+            .mdl-button:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .Editor__Rendered {
+        padding: 20px;
+        line-height: 1.5em;
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        blockquote,
+        li,
+        pre {
+            color: $text-color--primary;
+        }
+
+        p {
+            strong {
+                font-weight: $font-weight--bold;
+            }
+        }
+    }
+    .PostSettings {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 60%;
+        margin: 10px auto;
+        background: #fefefe;
+        border: 1px solid rgba(0,0,0, 0.12);
+        padding: 16px;
+        border-radius: 5px;
+
+        @include media('<=600px') {
+            width: 80%;
+        }
+
+        .PostSettings__section {
+            width: 100%;
+            margin-bottom: 20px;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0, 0.12);
+
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 8px;
+                line-height: 1.2;
+                font-weight: $font-weight--normal;
+            }
+        }
+
+        .PostSettings__text {
+            width: 100%;
+            .mdl-textfield__input {
+                background: #fff;
+                color: #222222;
+                padding: 10px;
+                border: 1px solid rgba(0,0,0, 0.12);
+            }
+            .mdl-textfield__label {
+                padding-left: 10px;
+                top: 30px;
+                &:after {
+                    background-color: #2F4050;
+                }
+            }
+        }
+        .date-picker {
+            padding: 5px;
+            border-radius: 4px;
+            border-color: transparent;
+        }
+        .image-btn {
+            float: left;
+            background-color: #DCDCDC;
+        }
+        .image-title {
+            float: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            padding-left: 0;
+            line-height: 1.4!important;
+        }
+    }
+    .PostImages {
+        padding: 20px;
+        .DropZone {
+            width: 70% !important;
+            height: 50px !important;
+            border: 2px dashed #333333;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            background: #dcdccc;
+        }
+        .PostImages__header {
+            font-weight: 400;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+        .attached {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            [class*="attached-item-"] {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                background: #dcdccc;
+                img {
+                    height: 100px;
+                    display: block;
+                    margin: auto;
+                }
+
+                .Image_check {
+                    position: absolute;
+                    color: white;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.Published {
+    padding: 20px;
+    .List__Header {
+        margin-bottom: 10px;
+    }
+
+    &.Types {
+        .type-entry {
+            @extend %clearfix;
+            span {
+                width: 80%;
+                float: left;
+            }
+            .actions {
+                width: 20%;
+                float: right;
+                display: inline-block;
+            }
+        }
+    }
+
+    .type-head {
+        @extend %clearfix;
+        .mdl-textfield {
+            width: 100% !important;
+        }
+        .mdl-button {
+            margin-left: 30px;
+        }
+    }
+
+    .published {
+        padding: 0 5px;
+        background: lighten(green, 20%);
+    }
+    .unpublished {
+        padding: 0 5px;
+        background: lighten(red, 20%);
+    }
+}

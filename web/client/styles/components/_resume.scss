@@ -1,0 +1,28 @@
+%resume {
+    #resume {
+        margin: 0 auto;
+        max-width: 750px;
+        padding: 0 20px;
+        background: $white;
+        font-family: $font-family--primary;
+        font-size: 14px;
+        @include media('<=640px') {
+            max-width: 80%;
+        }
+
+        label {
+            width: 156px;
+            text-align: left;
+            padding-left: 16px;
+            vertical-align: top;
+        }
+
+        p {
+            line-height: 1.2;
+        }
+
+        .move-right {
+            margin-left: 166px;
+        }
+    }
+}

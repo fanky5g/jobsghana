@@ -1,0 +1,244 @@
+.header {
+  @extend %clearfix;
+  position: relative;
+  z-index: 1000;
+  background: $color-primary;
+  border-bottom: .0625rem solid #303030;
+  width: 100%;
+  box-shadow: none;
+  display: flex;
+
+  .mdl-layout__header-row {
+    padding: 0;
+    width: 100%;
+    display: block;
+    line-height: 1.6em;
+    .mdl-navigation__link {
+      padding: 0;
+    }
+    .mdl-menu {
+      .mdl-menu__item {
+        width: 100%;
+      }
+    }
+  }
+
+  .brand {
+    display: none;
+    margin: 0 auto;
+    padding-top: 4px;
+    @extend %clearfix;
+    text-align: center;
+    width: fit-content;
+    img {
+      width: 64px;
+      height: auto;
+      float: left;
+      @include media('<=850px') {
+        width: 196px;
+        float: none;
+        margin: 0 auto;
+      }
+    }
+    span {
+      float: left;
+      line-height: 48px;
+      color: $white;
+      font-size: 12pt;
+      font-weight: $font-weight--semi-bold;
+      @include media('<=850px') {
+        line-height: 34px;
+      }
+    }
+    @include media('<=850px') {
+      display: block;
+    }
+  }
+
+  nav.mdl-navigation {
+    @extend %clearfix;
+    &:nth-child(2) {
+      float: left;
+    }
+    &:nth-child(3) {
+      float: right;
+    }
+
+    li {
+      display: inline-block;
+      float: left;
+      color: #fff;
+      font: $font-weight--semi-bold 14px/48px "Lato", $stack-sans-serif;
+      list-style: none;
+      margin: 0 6px 0 0;
+      position: relative;
+
+      a {
+        border: 1px solid $color-primary;
+        .brand & {
+          border: none;
+        }
+        text-decoration: none;
+        border-radius: 7px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        outline: none;
+        float: left;
+        padding: 5px 7px;
+        color: $white;
+        display: block;
+        line-height: 1.4;
+        &:hover,
+        &.active {
+          background-color: $color-accent;
+          border-color: $color-accent;
+        }
+      }
+
+      .md-button {
+        margin-top: 20px;
+      }
+    }
+    li.mdl-menu__item a {
+      border: none;
+      text-decoration: none;
+      border-radius: 0;
+      color: inherit;
+      padding: 0;
+      padding-top: 12px;
+      outline: none;
+      line-height: 1.4;
+      &:hover {
+        background-color: inherit;
+        border-color: transparent;
+      }
+    }
+    @include media('<=850px') {
+      display: none;
+    }
+  }
+
+  .ant-upload {
+    width: 100%;
+  }
+}
+
+
+.mdl-layout__drawer-button {
+  outline: none;
+  @include media('<=850px') {
+    z-index: 1001;
+    color: $white;
+    margin-top: 5px;
+  }
+  @include media('>850px') {
+    display: none;
+  }
+  .profilepage &,
+  .myprofilepage & {
+    position: fixed;
+  }
+}
+
+.profilepage,
+.myprofilepage {
+  .mdl-layout__inner-container {
+    position: unset;
+  }
+}
+
+.mdl-layout__drawer .mdl-navigation {
+  padding-top: 57px;
+}
+
+#main {
+  .mdl-layout__drawer {
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #333;
+    .mdl-navigation__link {
+      display: block;
+      padding: 0!important;
+      border-top: 1px solid #3e3e3e;
+      border-bottom: 1px solid #282828;
+      background-color: #333;
+      a {
+        color: #fff;
+        text-shadow: rgba(0, 0, 0, .6) 0 1px 0;
+        display: inline-block;
+        padding: 14px 20px 11px;
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.lang-nav ul#region {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  background: none;
+  width: auto;
+  top: initial;
+  left: initial;
+  float: left;
+}
+
+.lang-nav ul#region li {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+}
+
+.lang-nav ul#region li a {
+  border: none;
+  color: #fff;
+  display: block;
+  padding: 1.5em 1.5em 1.5em 3em;
+  background: none;
+  text-decoration: none;
+}
+
+.lang-nav ul#region li ul {
+  position: absolute;
+  left: initial;
+  visibility: visible;
+  opacity: 1;
+  width: 8em;
+  top: 56px;
+}
+
+.lang-nav .no-js ul {
+  display: none;
+}
+
+.lang-nav .no-js:hover ul {
+  display: block;
+}
+
+.lang-nav img {
+  width: 20px; //height: 8px;
+  position: absolute;
+  top: 1.95em;
+  left: 1.5em;
+}
+
+.lang-nav span {
+  padding-left: 4px;
+}
+
+.lang-nav ul#region li ul li a {
+  color: #7F7F7F;
+  padding: 1em 1.5em 1em 3em;
+  font-size: 0.7em;
+}
+
+.lang-nav ul#region li ul li a img {
+  top: 1.4em;
+  left: 1.3em;
+}
+
+.lang-nav {
+  @extend %clearfix;
+}

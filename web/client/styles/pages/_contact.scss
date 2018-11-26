@@ -1,0 +1,110 @@
+.Contact {
+	position: relative;
+	background: $aliceblue;
+	@include media('<=60rem') {
+		&.section {
+			.container {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	.section-header{
+		margin: 0;
+		.heading-2{
+			text-transform: uppercase;
+			text-align: left;
+			font-weight: 300;
+			-webkit-margin-before: 0;
+			-moz-margin-before: 0;
+			@include media('<=60rem') {
+				font-size: 1.5em;
+			    margin: 0;
+			    padding-bottom: 10px;
+			    line-height: 1em;
+			}
+		}
+		p {
+			text-align: left;
+			@include media('<=60rem') {
+				margin: 0 0 0.5rem 0;
+			}
+		}
+	}
+
+	div.contact-container{
+		position: relative;
+		@extend %clearfix;
+
+		.contact-info {
+			@include media('>1200px') {
+				padding-top: 40px;
+			}
+		}
+
+		@include media('>600px') {
+			display: flex;
+			& > * {
+				margin: 0 auto;
+			}
+		}
+
+		.contact-form-wrapper {
+			text-align: center;
+			float: left;
+			@include media('<=600px') {
+				&.grid__col--6 {
+					margin: 0 auto;
+					float: none !important;
+					vertical-align: middle;
+				}
+			}
+			.contact-form{
+				$background: $white;
+				width: auto;
+				height: auto;
+				padding: 20px;
+				@include media('<=60rem') {
+					padding: 8px;
+					height: auto;
+					.mdl-textfield {
+						font-size: 14px;
+						padding: 16px 0;
+						.mdl-textfield__input {
+							padding: 4px 0;
+						}
+						.mdl-textfield__label {
+							&:after {
+								bottom: 16px;
+							}
+						}
+					}
+				}
+				@include media('<=360px') {
+					.mdl-textfield {
+						width: 264px;
+					}
+				}
+			}
+		}
+		
+
+		.envelope{
+			background-size: cover !important;
+			background-color: $alabaster;
+		}
+	}
+}
+
+.mobile .Contact .main-wrapper {
+	max-width: 500px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.one-full{
+	@include media('<=769px'){
+		text-align: center;
+	}
+}

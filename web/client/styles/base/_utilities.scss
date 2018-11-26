@@ -1,0 +1,27 @@
+// =================================================================
+// Utilities
+// =================================================================
+//Import if Google Fonts URL is defined
+@if variable-exists(font-url--google) {
+    @import url($font-url--google);
+}
+
+// Calculate em values
+@function px2em($target, $context: $base__font-size) {
+    @return ($target / $context) * 1em;
+}
+
+//set the context width for the grid
+@function g-context($g-col-width,
+$g-col-count,
+$g-gutter-width) {
+	$g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+	@return $g-context;
+}
+
+@function sidebar-width($i){
+	$target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global; 
+
+    @return percentage($target / $context);
+}
