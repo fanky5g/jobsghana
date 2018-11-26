@@ -6,10 +6,10 @@ Open sourcing a closed project. Was supposed to be a job board. Project was clos
 [Install docker](https://docs.docker.com/engine/installation/), a container management tool for building microservices based containerized applications.
 [Install docker-compose](https://docs.docker.com/compose/install/)
 
-Run: **go get -u bitbucket.org/fanky5g/xxxinafrica**
+Run: **go get -u github.com/fanky5g/xxxinafrica**
 
 #Change directory to xxxinafrica:
-Run: cd $GOPATH/bitbucket.org/fanky5g/xxxinafrica
+Run: cd $GOPATH/github.com/fanky5g/xxxinafrica
 Run: make
 
 Run: **docker-compose up**
