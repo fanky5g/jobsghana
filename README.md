@@ -1,4 +1,4 @@
-Open sourcing a closed project. Was supposed to be a job board. Project was closed. Use as you please :)
+Open sourcing a closed project. Was supposed to be a job board that crawls and indexes other job boards in Ghana but went to a dead end. Use as you please :)
 
 [Install golang:](https://golang.org/doc/install) by following your architecture instructions.
 **Make sure to setup GOPATH. You'll find notes on the same page**
@@ -6,10 +6,10 @@ Open sourcing a closed project. Was supposed to be a job board. Project was clos
 [Install docker](https://docs.docker.com/engine/installation/), a container management tool for building microservices based containerized applications.
 [Install docker-compose](https://docs.docker.com/compose/install/)
 
-Run: **go get -u github.com/fanky5g/xxxinafrica**
+Run: **go get -u github.com/fanky5g/jobsghana**
 
-#Change directory to xxxinafrica:
-Run: cd $GOPATH/github.com/fanky5g/xxxinafrica
+#Change directory to jobsghana:
+Run: cd $GOPATH/github.com/fanky5g/jobsghana
 Run: make
 
 Run: **docker-compose up**
